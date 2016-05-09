@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+		<report>
+			<children>
+				<get4cast_salesforecast translate="title"
+						module="get4cast_salesforecast">
+					<title>Get4Cast</title>
+					<sort_order>0</sort_order>
+					<depends>
+						<module>Get4Cast_SalesForecast</module>
+					</depends>
+					<children>
+						<sales_forecast translate="title" 
+								module="get4cast_salesforecast">
+							<title>Sales Forecast</title>
+							<sort_order>1</sort_order>
+							<action>get4cast_salesforecast_admin/forecast</action>
+							<children>
+								<forecast_history translate="title" 
+										module="get4cast_salesforecast">
+									<title>Forecast history</title>
+									<sort_order>1</sort_order>
+									<action>get4cast_salesforecast_admin/forecast</action>
+								</forecast_history>
+							</children>
+							<children>
+								<new_forecast translate="title" 
+										module="get4cast_salesforecast">
+									<title>New forecast</title>
+									<sort_order>2</sort_order>
+									<action>get4cast_salesforecast_admin/forecast/edit</action>
+								</new_forecast>
+							</children>
+						</sales_forecast>
+					</children>
+				</get4cast_salesforecast>
+			</children>
+		</report>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+					<report>
+						<children>
+							<get4cast_salesforecast translate="title"
+									module="get4cast_salesforecast">
+								<title>Get4Cast</title>
+								<sort_order>0</sort_order>
+								<depends>
+									<module>Get4Cast_SalesForecast</module>
+								</depends>
+								<children>
+									<sales_forecast translate="title" 
+											module="get4cast_salesforecast">
+										<title>Sales Forecast</title>
+										<sort_order>1</sort_order>
+										
+										<children>
+											<forecast_history translate="title" 
+													module="get4cast_salesforecast">
+												<title>Forecast history</title>
+												<sort_order>1</sort_order>
+												
+											</forecast_history>
+										</children>
+										<children>
+											<new_forecast translate="title" 
+													module="get4cast_salesforecast">
+												<title>New forecast</title>
+												<sort_order>2</sort_order>
+												
+											</new_forecast>
+										</children>
+									</sales_forecast>
+								</children>
+							</get4cast_salesforecast>
+						</children>
+					</report>
+				</children>
+            </admin>
+        </resources>
+    </acl>
+    <layout>
+		<updates>
+			<salesforecastadmin>
+				<file>get4cast_salesforecast_admin.xml</file>
+			</salesforecastadmin>
+		</updates>
+	</layout>
+</config>

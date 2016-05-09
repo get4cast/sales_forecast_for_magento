@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Get4Cast_SalesForecast>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Get4Cast_SalesForecast>
+    </modules>
+</config>

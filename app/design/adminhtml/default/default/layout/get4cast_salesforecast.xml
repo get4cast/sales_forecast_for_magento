@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout>
+	<get4cast_salesforecast>
+		<reference name="head">
+			<action method="addJs"><script>get4cast/salesforecast/jquery-1.12.0.min.js</script></action>
+			<action method="addJs"><script>get4cast/salesforecast/forecast.js</script></action>
+		</reference>
+	</get4cast_salesforecast>
+</layout>

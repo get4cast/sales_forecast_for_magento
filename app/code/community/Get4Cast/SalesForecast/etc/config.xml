@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Get4Cast_SalesForecast>
+            <version>1.0.0</version>
+        </Get4Cast_SalesForecast>
+    </modules>
+    <default>
+		<get4cast>
+			<default>
+				<api_url>https://api.sfm.get4cast.com/api</api_url>
+				<enable_request_report>true</enable_request_report>
+			</default>
+		</get4cast>
+	</default>
+	<adminhtml>
+	  <layout>
+		<updates>
+		  <get4cast_salesforecast>
+			<file>get4cast_salesforecast.xml</file>
+		  </get4cast_salesforecast>
+		</updates>
+	  </layout>
+	</adminhtml>
+    <global>
+
+        <blocks>
+            <get4cast_salesforecast_adminhtml>
+               <class>Get4Cast_SalesForecast_Block_Adminhtml</class>
+            </get4cast_salesforecast_adminhtml>
+        </blocks>
+
+        <helpers>
+            <get4cast_salesforecast>
+                <class>Get4Cast_SalesForecast_Helper</class>
+            </get4cast_salesforecast>
+        </helpers>
+        
+        <models>
+
+            <get4cast_salesforecast>
+                
+                <class>Get4Cast_SalesForecast_Model</class>
+				<resourceModel>get4cast_salesforecast_resource</resourceModel>
+                
+            </get4cast_salesforecast>
+            
+
+            <get4cast_salesforecast_resource>
+                
+                <class>Get4Cast_SalesForecast_Model_Resource</class>
+                
+                <entities>
+					<config>
+                        <table>get4cast_salesforecast_config</table>
+                    </config>
+                    <forecast>
+                        <table>get4cast_salesforecast_forecast</table>
+                    </forecast>
+                </entities>
+                
+            </get4cast_salesforecast_resource>
+            
+        </models>
+        
+        <resources>
+
+            <get4cast_salesforecast_setup>
+                
+                <setup>
+
+                    <module>Get4Cast_SalesForecast</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                    
+                </setup>
+
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+                
+            </get4cast_salesforecast_setup>
+            
+        </resources>
+        
+        <events>
+			<controller_action_layout_load_before>
+                <observers>
+                    <get4cast_salesforecast_model_observer>
+                        <class>Get4Cast_SalesForecast_Model_Observer</class>
+                        <method>get4CastAddCustomHandle</method>
+                    </get4cast_salesforecast_model_observer>
+                </observers>
+            </controller_action_layout_load_before>
+			
+			<controller_action_predispatch_get4cast_salesforecast_admin_forecast_index>
+				<observers>
+					<get4cast_salesforecast_model_observer>
+						<type>singleton</type>
+						<class>Get4Cast_SalesForecast_Model_Observer</class>
+						<method>get4CastPreDispatch</method>
+					</get4cast_salesforecast_model_observer>
+				</observers>
+			</controller_action_predispatch_get4cast_salesforecast_admin_forecast_index>
+			<controller_action_predispatch_get4cast_salesforecast_admin_forecast_edit>
+				<observers>
+					<get4cast_salesforecast_model_observer>
+						<type>singleton</type>
+						<class>Get4Cast_SalesForecast_Model_Observer</class>
+						<method>get4CastPreDispatch</method>
+					</get4cast_salesforecast_model_observer>
+				</observers>
+			</controller_action_predispatch_get4cast_salesforecast_admin_forecast_edit>
+        </events>
+    </global>
+    
+    <admin>
+        <routers>
+            
+            <get4cast_salesforecast_admin>
+
+                <use>admin</use>
+                
+                <args>
+                   <module>Get4Cast_SalesForecast_Adminhtml</module>
+                    <frontName>get4cast-salesforecast-admin</frontName>
+                </args>
+                
+            </get4cast_salesforecast_admin>
+            
+        </routers>
+    </admin>
+</config>
