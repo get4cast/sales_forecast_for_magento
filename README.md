@@ -1,2 +1,3 @@
-# sales_forecast_for_magento
-Sales Forecast for Magento
+# Sales Forecast for Magento
+
+## Genral overview
