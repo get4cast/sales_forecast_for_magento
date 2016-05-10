@@ -8,7 +8,7 @@
     <default>
 		<get4cast>
 			<default>
-				<api_url>https://api.sfm.get4cast.com/api</api_url>
+				<api_url>https://api-sfm.get4cast.com/api</api_url>
 				<enable_request_report>true</enable_request_report>
 			</default>
 		</get4cast>
