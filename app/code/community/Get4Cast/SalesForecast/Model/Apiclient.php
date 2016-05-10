@@ -109,7 +109,7 @@ class Get4Cast_SalesForecast_Model_Apiclient
 			$data['store'] = Mage::helper('get4cast_salesforecast/data')
 									->getAllStores();
 			
-			$data['magento_verion'] = Mage::getVersion();
+			$data['magento_version'] = Mage::getVersion();
 			
 			//Request register
 			$response = $this->httpRequest('Install/register', 'POST', $data);			
