@@ -156,6 +156,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 		$jstranslator_array[] = "Ok!";
 		$jstranslator_array[] = "Click on Step 1: Check forecast price before";
 		$jstranslator_array[] = "Ready to go!";
+		$jstranslator_array[] = "Request forecast is disabled in this platform.";
 
 		$jstranslator .= '<script>';
 		foreach($jstranslator_array as $value){
