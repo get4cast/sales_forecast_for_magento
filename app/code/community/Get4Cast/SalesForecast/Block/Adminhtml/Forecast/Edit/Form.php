@@ -95,6 +95,73 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 			'value' => $first_store,
 		));
 		
+		$jstranslator_array = array();
+		$jstranslator_array[] = "Loading...";
+		$jstranslator_array[] = "Unable to get forecast price";
+		$jstranslator_array[] = "The payment link will be available";
+		$jstranslator_array[] = "when you open your report and in your email.";
+		$jstranslator_array[] = "You have a credit of:";
+		$jstranslator_array[] = "Forecast original price:";
+		$jstranslator_array[] = "Forecast final price";
+		$jstranslator_array[] = "You will still have<br>a credit of";
+		$jstranslator_array[] = "Forecast price";
+		$jstranslator_array[] = "Try again or";
+		$jstranslator_array[] = "contact us";
+		$jstranslator_array[] = "Could not retrieve account information";
+		$jstranslator_array[] = "Your email is required";
+		$jstranslator_array[] = "Your email is invalid";
+		$jstranslator_array[] = "Analyse from day is required";
+		$jstranslator_array[] = "Analyse to day is required";
+		$jstranslator_array[] = "Forecast until day is required";
+		$jstranslator_array[] = "Invalid date format";
+		$jstranslator_array[] = "Invalid date format...";
+		$jstranslator_array[] = "Analyse from day invalid date";
+		$jstranslator_array[] = "Analyse to day invalid date";
+		$jstranslator_array[] = "Analyse from day must be before Analyse to day";
+		$jstranslator_array[] = "Analyse to day must be in the past";
+		$jstranslator_array[] = "Forecast until day must be in the future";
+		$jstranslator_array[] = "To have a minimum acceptable precision you must:";
+		$jstranslator_array[] = "Select at least";
+		$jstranslator_array[] = "days of historical data to be analysed.";
+		$jstranslator_array[] = "See";
+		$jstranslator_array[] = "how to increase your forecast accuracy";
+		$jstranslator_array[] = "There is a limit of";
+		$jstranslator_array[] = "days of historical data that can be analysed.";
+		$jstranslator_array[] = "Please, select a smaller period.";
+		$jstranslator_array[] = "If you need to analyze more data";
+		$jstranslator_array[] = "for a custom service.";
+		$jstranslator_array[] = "There is a limit of";
+		$jstranslator_array[] = "days for forecast.";
+		$jstranslator_array[] = "Please, select a smaller period.";
+		$jstranslator_array[] = "If you need to process more data";
+		$jstranslator_array[] = "for a custom service.";
+		$jstranslator_array[] = "You are willing to analyse";
+		$jstranslator_array[] = "days";
+		$jstranslator_array[] = "of historical data and to forecast";
+		$jstranslator_array[] = "To have a minimum acceptable precision you can:";
+		$jstranslator_array[] = "Increase the period of historical data to be analysed";
+		$jstranslator_array[] = "Decrease the number of forecast days";
+		$jstranslator_array[] = "Request error";
+		$jstranslator_array[] = "Validating data...";
+		$jstranslator_array[] = "Validation error";
+		$jstranslator_array[] = "Collecting, splitting and sending data...";
+		$jstranslator_array[] = "Unable to request";
+		$jstranslator_array[] = "Your request was successfully received.";
+		$jstranslator_array[] = "We will process your data and notify you when everything is done.";
+		$jstranslator_array[] = "You can check your report status in Forecast history page.";
+		$jstranslator_array[] = "Error";
+		$jstranslator_array[] = "Info";
+		$jstranslator_array[] = "Ok!";
+		$jstranslator_array[] = "Click on Step 1: Check forecast price before";
+		$jstranslator_array[] = "Ready to go!";
+
+		$jstranslator .= '<script>';
+		foreach($jstranslator_array as $value){
+			$jstranslator .= "Translator.add(\"".$value."\", \"".$this->__($value)."\");";
+		}
+		$jstranslator .= '</script>';
+		
+		
 		$notify_email_after = $this->__('You will be notified by email when the report is ready');
 		$fieldset->addField('email', 'text', array(
 			'name'     => 'email',
@@ -106,7 +173,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 			'after_element_html' => '<small>'.$notify_email_after.'</small>',
 			'value' => $forecast->getEmail(),
 			'disabled' => $disabled,
-		));
+		))->setAfterElementHtml($jstranslator);
 
 		// Period start to analyse historical data
 		$fieldset->addField('historical_date_start', 'date', array(

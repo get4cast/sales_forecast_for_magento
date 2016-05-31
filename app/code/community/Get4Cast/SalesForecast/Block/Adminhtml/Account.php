@@ -12,7 +12,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Account
 			$html .= '<ul>';
 				if($account_info['account_notifications']){
 					foreach($account_info['account_notifications'] as $notification){
-						$html .= '<li>'.$notification.'</li>';
+						$html .= '<li>'.$this->__($notification).'</li>';
 					}
 				}
 			$html .= '</ul>';

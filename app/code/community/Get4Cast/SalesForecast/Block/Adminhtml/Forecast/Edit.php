@@ -12,7 +12,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit
         $newOrEdit = $this->getRequest()->getParam('id')
             ? $this->__('Edit') 
             : $this->__('New');
-        $this->_headerText =  $newOrEdit . ' ' . $this->__('Forecast');
+        $this->_headerText =  $newOrEdit . ' ' . $this->__('forecast report');
     }
     
     protected function _prepareLayout() {

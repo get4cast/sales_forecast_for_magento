@@ -58,21 +58,21 @@ function callCheckReportDetails(account_info_json, ajax_url){
 							if(parseFloat(account_info_json.account_balance) > 0){
 								msg += '<table>';
 								msg += '<tr>';
-									msg += '<td>You have a credit of:</td>';
+									msg += '<td>'+Translator.translate('You have a credit of:')+'</td>';
 									msg += '<td>+ $'+account_info_json.account_balance+'</td>';
 								msg += '</tr>';						
 								msg += '<tr>';
-									msg += '<td style=\'border-bottom: solid 1px silver\'>Forecast original price:</td>';
+									msg += '<td style=\'border-bottom: solid 1px silver\'>'+Translator.translate('Forecast original price:')+'</td>';
 									msg += '<td style=\'border-bottom: solid 1px silver\'>- $'+data.original_price+'</td>';
 								msg += '</tr>';
 								msg += '<tr>';
-									msg += '<td style=\'font-weight:bold\'>Forecast final price:</td>';
+									msg += '<td style=\'font-weight:bold\'>'+Translator.translate('Forecast final price')+':</td>';
 									if(data.final_balance > 0 || data.final_price <= 0){
 										msg += '<td>';
 											msg += '<span style=\'font-weight:bold\'>FREE</span>';
 											if(data.final_balance > 0){
 												msg += '<br>';
-												msg += 'You will still have<br>a credit of $'+data.final_balance;
+												msg += Translator.translate('You will still have<br>a credit of')+' $'+data.final_balance;
 											}
 										msg += '</td>';
 									} else {
@@ -86,7 +86,7 @@ function callCheckReportDetails(account_info_json, ajax_url){
 								msg += '</table>';
 							} else {
 								msg += '<span style=\'font-weight:bold\'>'
-									msg += 'Forecast price: $'+data.original_price;
+									msg += Translator.translate('Forecast price')+': $'+data.original_price;
 								msg += '</span>'
 								msg += '<br>';
 								msg += payment_ling_msg_info;									
@@ -147,7 +147,7 @@ function checkReportDetails(account_info_json){
 	if(!email){
 		jQuery('#email').focus();
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Your email\' is required');
+		checked.msg = Translator.translate('Your email is required');
 		return checked;
 	}
 	
@@ -155,14 +155,14 @@ function checkReportDetails(account_info_json){
     validate_email = pattern.test(email);
     if(!validate_email){
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Your email\' is invalid');
+		checked.msg = Translator.translate('Your email is invalid');
 		return checked;
 	}
 	
 	if(!historical_date_start){
 		jQuery('#historical_date_start').focus();
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Analyse from day\' is required');
+		checked.msg = Translator.translate('Analyse from day is required');
 		return checked;
 	}
 
@@ -171,7 +171,7 @@ function checkReportDetails(account_info_json){
 		checked.type = 'error';
 		if(!first_validation){
 			checked.type = 'error';
-			checked.msg = Translator.translate('\'Analyse to day\' is required');
+			checked.msg = Translator.translate('Analyse to day is required');
 		}
 		return checked;
 	}
@@ -179,7 +179,7 @@ function checkReportDetails(account_info_json){
 	if(!forecast_date_end){
 		jQuery('#forecast_date_end').focus();
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Forecast until day\' is required');
+		checked.msg = Translator.translate('Forecast until day is required');
 		return checked;
 	}
 	
@@ -211,7 +211,7 @@ function checkReportDetails(account_info_json){
 	if(!required_info){
 		checked = {}
 		checked.type = 'error';
-		checked.msg = Translator.translate('Invalid date format......');
+		checked.msg = Translator.translate('Invalid date format...');
 		return checked;
 	}
 
@@ -249,7 +249,7 @@ function checkReportDetails(account_info_json){
 	{
 		checked = {}
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Analyse from day\' is an invalid date');
+		checked.msg = Translator.translate('Analyse from day invalid date');
 		return checked;
 	}
 	
@@ -258,7 +258,7 @@ function checkReportDetails(account_info_json){
 	{
 		checked = {}
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Analyse to day\' is an invalid date');
+		checked.msg = Translator.translate('Analyse to day invalid date');
 		return checked;
 	}
     
@@ -268,7 +268,7 @@ function checkReportDetails(account_info_json){
 	if(hist_days_diff <= 0){
 		count_dates_error++;
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Analyse from day\' must be before \'Analyse to day\'');
+		checked.msg = Translator.translate('Analyse from day must be before Analyse to day');
 		return checked;
 	}
 	
@@ -299,7 +299,7 @@ function checkReportDetails(account_info_json){
 	if(days_diff <= 0){
 		count_dates_error++;
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Analyse to day\' must be in the past');
+		checked.msg = Translator.translate('Analyse to day must be in the past');
 		return checked;
 	}
 	
@@ -308,7 +308,7 @@ function checkReportDetails(account_info_json){
 	if(forecast_days_diff <= 0){
 		count_dates_error++;
 		checked.type = 'error';
-		checked.msg = Translator.translate('\'Forecast until day\' must be in the future');
+		checked.msg = Translator.translate('Forecast until day must be in the future');
 		return checked;
 	}
 	
@@ -321,12 +321,11 @@ function checkReportDetails(account_info_json){
 		msg = '';
 		msg += Translator.translate('To have a minimum acceptable precision you must:');
 		msg += '<br>';
-		msg += Translator.translate('- Select at least '+account_info_json.core_config.limit_min_historic_days);
+		msg += '- '+Translator.translate('Select at least')+' '+account_info_json.core_config.limit_min_historic_days;
 		msg += ' ';
-		msg += Translator.translate('days of historical data to be analysed');
+		msg += Translator.translate('days of historical data to be analysed.');
 		msg += '<br>';
-		msg += '<br>';
-		msg += Translator.translate('Learn');
+		msg += Translator.translate('See');
 		msg += ' ';
 		msg += '<a target=\'_blank\' href=\''+account_info_json.core_config.url_help_tips_about_precision+'\'>';
 			msg += Translator.translate('how to increase your forecast accuracy');
@@ -347,7 +346,7 @@ function checkReportDetails(account_info_json){
 		msg += '<br>';
 		msg += Translator.translate('Please, select a smaller period.');
 		msg += '<br>';
-		msg += Translator.translate('If you need to process more data');
+		msg += Translator.translate('If you need to analyze more data');
 		msg += ' ';
 		msg += '<a target=\'_blank\' href=\''+account_info_json.core_config.url_contact_us_custom+'\'>';
 			msg += Translator.translate('contact us');
@@ -406,12 +405,12 @@ function checkReportDetails(account_info_json){
 		msg += '<br>';
 		msg += Translator.translate('To have a minimum acceptable precision you can:');
 		msg += '<br>';
-		msg += Translator.translate('- Increase the period of historical data to be analysed');
+		msg += '- '+Translator.translate('Increase the period of historical data to be analysed');
 		msg += '<br>';
-		msg += Translator.translate('- Decrease the number of forecast days');
+		msg += '- '+Translator.translate('Decrease the number of forecast days');
 		msg += '<br>';
 		msg += '<br>';
-		msg += Translator.translate('Learn');
+		msg += Translator.translate('See');
 		msg += ' ';
 		msg += '<a target=\'_blank\' href=\''+account_info_json.core_config.url_help_tips_about_precision+'\'>';
 			msg += Translator.translate('how to increase your forecast accuracy');
@@ -529,7 +528,7 @@ function requestValidate(request_urls){
 				msg += '<br>';
 				msg += Translator.translate('We will process your data and notify you when everything is done.');
 				msg += '<br>';
-				msg += Translator.translate('You can check your report status in \'Forecast history\' page.');
+				msg += Translator.translate('You can check your report status in Forecast history page.');
 				
 				updateRequestForecastInfo('ok', msg, info_id, true);
 			}
@@ -671,7 +670,7 @@ function disableRequestButton(show_tip = true, button_id = 'request_forecast'){
 	jQuery('#'+button_id).attr("style", "border:none;background-color:silver;background-image:none");
 	jQuery('#'+button_id).prop("disabled",true);
 	if(show_tip){
-		jQuery('#request_forecast_info').html('<br>'+Translator.translate('Click on \'Check forecast price\' before'));
+		jQuery('#request_forecast_info').html('<br>'+Translator.translate('Click on Step 1: Check forecast price before'));
 	} else {
 		jQuery('#request_forecast_info').hide();
 	}
@@ -683,7 +682,7 @@ function enableRequestButton(){
 		jQuery('#request_forecast').prop("disabled",false);
 		info_html = '<br>';
 		info_html += '<span style="color:green;font-size:12px;font-weight:bold">';
-			info_html += 'Ready to go!';
+			info_html += Translator.translate('Ready to go!');
 		info_html += '</span>';
 	} else {
 		info_html = '<br>';

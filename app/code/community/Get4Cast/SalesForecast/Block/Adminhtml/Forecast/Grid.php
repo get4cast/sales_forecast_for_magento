@@ -60,14 +60,14 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Grid
         ));
         
         $this->addColumn('period_start', array(
-            'header' => $this->__('Period Start'),
+            'header' => $this->__('Period start'),
             'type' => 'date',
             'index' => 'period_start',
             'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM),
         ));
         
         $this->addColumn('period_end', array(
-            'header' => $this->__('Period End'),
+            'header' => $this->__('Period end'),
             'type' => 'date',
             'index' => 'period_end',
             'format' => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM),
@@ -80,26 +80,26 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Grid
         ));
         
         $this->addColumn('price', array(
-            'header' => $this->__('Price'),
+            'header' => $this->__('Report price'),
             'type' => 'text',
             'index' => 'price',
         ));
         
         $this->addColumn('payment_status', array(
-            'header' => $this->__('Payment Status'),
+            'header' => $this->__('Payment status'),
             'type' => 'text',
             'index' => 'payment_status',
         ));
         
         $this->addColumn('url', array(
-            'header' => $this->__('Report URL'),
+            'header' => $this->__('Open report'),
             'type' => 'text',
             'index' => 'url',
             'renderer' =>  'Get4Cast_SalesForecast_Block_Adminhtml_Url'
         ));
         
         $this->addColumn('status', array(
-            'header' => $this->__('Status'),
+            'header' => $this->__('Report status'),
             'type' => 'text',
             'index' => 'status',
         ));
