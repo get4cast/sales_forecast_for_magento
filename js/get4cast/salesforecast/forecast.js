@@ -687,7 +687,7 @@ function enableRequestButton(){
 	} else {
 		info_html = '<br>';
 		info_html += '<span style="color:red;font-size:12px;font-weight:bold">';
-			info_html += 'Request forecast is disabled in this platform.';
+			info_html += Translator.translate('Request forecast is disabled in this platform.');
 		info_html += '</span>';
 	}
 	jQuery('#request_forecast_info').html(info_html);
