@@ -34,12 +34,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 		$disabled = $forecast->getId() ? true : false;
 		
 		$enable_request_report = Mage::getStoreConfig('get4cast/default/enable_request_report');
-		if($enable_request_report == 'true'){
-			$enable_request_report = true;
-		} else {
-			$enable_request_report = false;
-		}
-        
+
         $account_info = Mage::getSingleton('core/session')
 							->getGet4CastAccountInfo();
 		if(!$account_info){
@@ -294,7 +289,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 						</small>";
 			
 			$disable_result = $forecast->getStatus() == 'request result' ? false : true;
-			if($disable_result || !$enable_request_report){
+			if($disable_result || $enable_request_report == 'false'){
 			$after_html .= "<script type=\"text/javascript\">
 								disableRequestButton(false, 'request_result');
 							</script>";
