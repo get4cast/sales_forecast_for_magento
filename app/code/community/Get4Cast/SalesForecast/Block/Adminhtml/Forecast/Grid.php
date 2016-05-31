@@ -89,6 +89,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Grid
             'header' => $this->__('Payment status'),
             'type' => 'text',
             'index' => 'payment_status',
+            'renderer' =>  'Get4Cast_SalesForecast_Block_Adminhtml_Translate'
         ));
         
         $this->addColumn('url', array(
@@ -102,6 +103,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Grid
             'header' => $this->__('Report status'),
             'type' => 'text',
             'index' => 'status',
+            'renderer' =>  'Get4Cast_SalesForecast_Block_Adminhtml_Translate'
         ));
         
         return parent::_prepareColumns();

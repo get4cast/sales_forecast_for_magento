@@ -10,7 +10,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Link
 		$html = '<td class="label">'.$element->getLabelHtml().'</td>';
 		$html .= '<td class = "value">';
 			$html .= '<ul>';
-					$html .= "<a href='".$forecast->getUrl()."' target='_blank'>".$this->__('Click here')."</a>";
+					$html .= "<a href='".$forecast->getUrl()."' target='_blank'>".$this->__('Click here to open your report')."</a>";
 			$html .= '</ul>';
 		$html .= '</td>';
 		
