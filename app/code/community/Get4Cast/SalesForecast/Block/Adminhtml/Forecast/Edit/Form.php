@@ -173,10 +173,9 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 			'required' => true,
 			'disabled' => false,
 			'image'    => $this->getSkinUrl('images/grid-cal.gif'),
-			'after_element_html' => '<small>'.$notify_email_after.'</small>',
 			'value' => $forecast->getEmail(),
 			'disabled' => $disabled,
-		))->setAfterElementHtml($jstranslator);
+		))->setAfterElementHtml('<small>'.$notify_email_after.'</small>'.$jstranslator);
 
 		// Period start to analyse historical data
 		$fieldset->addField('historical_date_start', 'date', array(
