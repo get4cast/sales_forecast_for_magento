@@ -38,6 +38,8 @@ class Get4Cast_SalesForecast_Model_Apiclient
 			$url = $this->api_url.'/'.$path;
 
 			$data_json = Mage::helper('core')->jsonEncode($data);
+			$data_json = urlencode($data_json);
+			$send_data = '';
 			if($data_json){
 				$send_data = '&p='.$data_json;
 			}

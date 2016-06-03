@@ -158,7 +158,7 @@ class Get4Cast_SalesForecast_Block_Adminhtml_Forecast_Edit_Form
 		$jstranslator_array[] = "Ready to go!";
 		$jstranslator_array[] = "Request forecast is disabled in this platform.";
 
-		$jstranslator .= '<script>';
+		$jstranslator = '<script>';
 		foreach($jstranslator_array as $value){
 			$jstranslator .= "Translator.add(\"".$value."\", \"".$this->__($value)."\");";
 		}

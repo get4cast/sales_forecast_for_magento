@@ -150,7 +150,7 @@ class Get4Cast_SalesForecast_Adminhtml_ForecastController
 		return true;
 	}
 
-    protected function _isAllowed($action)
+    protected function _isAllowed()
     {
         $action_name = $this->getRequest()->getActionName();
         $admin_session = Mage::getSingleton('admin/session');
