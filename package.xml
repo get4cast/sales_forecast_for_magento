@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>get4cast_salesforecast</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license uri="https://www.get4cast.com/sales-forecast-for-magento/license">Get4Cast</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Sales Forecast by Get4Cast</summary>
+    <description>Anticipate outcomes and decision-making using Predictive Analytics. This extension forecasts sales, orders, inventory, revenue and cancellation probability. Be one step ahead.</description>
+    <notes>pt_BR locale</notes>
+    <authors><author><name>Get4Cast</name><user>Get4Cast</user><email>hello@get4cast.com</email></author></authors>
+    <date>2016-07-12</date>
+    <time>16:28:14</time>
+    <contents><target name="magecommunity"><dir name="Get4Cast"><dir name="SalesForecast"><dir name="Block"><dir name="Adminhtml"><file name="Account.php" hash="55882c10fb27f3f468e003e39b9e310a"/><dir name="Forecast"><dir name="Edit"><file name="Form.php" hash="1d6cb5ead427ec7c8132f3eec3d3a545"/></dir><file name="Edit.php" hash="339a7df28ab8b567c2cb9f84f2d32d48"/><file name="Grid.php" hash="20bfc2add945ef4ae85c3f1bfc574c24"/></dir><file name="Forecast.php" hash="305cf21ba3760fd9b67b0ab9dbbbb9ce"/><file name="Link.php" hash="ed7e2d77241da304ccc1d1dbfe26d0a6"/><file name="Translate.php" hash="902e087a6ae5a86f466e6f196778abff"/><file name="Url.php" hash="19fd9218cdfdfd5d5bd3c0b31bec0d65"/></dir></dir><dir name="Helper"><file name="Data.php" hash="35a3c85242db4d493c449ecedbfcf72f"/></dir><dir name="Model"><file name="Apiclient.php" hash="6b573c83d3a40f8f4d4628af23d6eac0"/><file name="Collect.php" hash="8ff7330fe7081312e6e05e1e1237a628"/><file name="Config.php" hash="7b6b632f01e216524cabe1ea9182c6a1"/><file name="Forecast.php" hash="b20a234cda4dac8a78a60a8bd61a883f"/><file name="Observer.php" hash="344dc7705f9b67f5dad2d32c49ccd0ce"/><dir name="Resource"><dir name="Config"><file name="Collection.php" hash="3da7570f50ec6576af694a31487b5818"/></dir><file name="Config.php" hash="d77d907aa40179a1c8733265b0990587"/><dir name="Forecast"><file name="Collection.php" hash="cb43b14d6f7d22d22848abfc271cc68b"/></dir><file name="Forecast.php" hash="ccbadf0663f3437a5f795f50c4668ae5"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="ForecastController.php" hash="74e329b19a241166730d2ce73696f436"/></dir></dir><dir name="data"><dir name="get4cast_salesforecast_setup"><file name="data-install-1.0.0.php" hash="c7460f229ffb7e2ff5c897ad909c5e17"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="5413e7a5b2ce99d5738b808156159c41"/><file name="config.xml" hash="d780c7606386b8e8302b582702d5ea7c"/></dir><dir name="sql"><dir name="get4cast_salesforecast_setup"><file name="install-1.0.0.php" hash="c223b6c4b84e9213bffe535ba117ab2e"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="get4cast_salesforecast.xml" hash="7c5b1db972b48a0f0042f69e640909f1"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Get4Cast_SalesForecast.xml" hash="480957f25e9f09325c8b30d02dd10799"/></dir></target><target name="magelocale"><dir><dir name="pt_BR"><file name="Get4Cast_SalesForecast.csv" hash="59ef03bfafc95d4c8854b8dc52652b2f"/></dir></dir></target><target name="mageweb"><dir name="js"><dir name="get4cast"><dir name="salesforecast"><file name="forecast.js" hash="1f64d88f390543d71349b72512ff9ff4"/><file name="jquery-1.12.0.min.js" hash="cbb11b58473b2d672f4ed53abbb67336"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
